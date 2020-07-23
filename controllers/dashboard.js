@@ -17,7 +17,7 @@ const dashboard = {
   },
 
 
-/*
+
   addAssessment(request, response) {
     const memberId = accounts.getCurrentUser(request);
     const newAssessment = {
@@ -29,9 +29,9 @@ const dashboard = {
       waist: request.body.waist,
       hips: request.body.hips,
     };
-    assessment.addAssessment(memberId, newAssessment);
+    memberAssessments.addAssessment(memberId, newAssessment);
     response.redirect('/assessment/' + memberId)
   },
-  */
+
 };
 module.exports = dashboard;
