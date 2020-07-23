@@ -1,28 +1,33 @@
 'use strict';
 
 const _ = require("lodash");
+const JsonStore = require("./json-store");
 
-const assessmentCollection = {
+const assessmentStore = {
   
-  assessmentCollection: require('./assessment-store.json').assessmentCollection,
+  store: new JsonStore("./models/assessment-store.json", {
+    assessmentCollection: []
+  }),
+  collection: "assessmentCollection",
+  
 
   getAllAssessments() {
-    return this.assessmentCollection;
+    return this.store.findAll(this.collection);
   },
 
-  getMember(id) {
-    return _.find(this.assessmentCollection, { id: id});
+  getAssessment(id) {
+    return this.store.findOneBy(this.collection, { id: id});
 
   },
 
-  getUserAssessments(id) {
-    return this.store.findby(this.collection, { id: id});
+  getUserAssessments(userid) {
+    return this.store.findBy(this.collection, { userid: userid});
   },
       
-  addAssessment(id, assessment) {
-    const member = this.getMember(id);
-    member.assessment.push(assessment);
+  addAssessment(assessment) {
+    this.store.add(this.colleiton, assessment);
+    this.store.save();
   },
 };
 
-module.exports = assessmentCollection;
+module.exports = assessmentStore;
