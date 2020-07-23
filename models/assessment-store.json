@@ -1,5 +1,15 @@
 {
   "assessmentCollection": [
+    {
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "assessmentId": "4ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": "107",
+      "chest": "38",
+      "thigh": "16",
+      "upperArm": "14",
+      "waist": "36",
+      "hips": "38"
+    }
     
   ]
 }
