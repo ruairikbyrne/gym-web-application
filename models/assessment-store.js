@@ -15,12 +15,12 @@ const assessmentCollection = {
 
   },
 
-  getUserAssessments(memberId) {
+  getUserAssessments(id) {
     return this.store.findby(this.collection, { id: id});
   },
       
-  addAssessment(memberId, assessment) {
-    const member = this.getMember(memberId);
+  addAssessment(id, assessment) {
+    const member = this.getMember(id);
     member.assessment.push(assessment);
   },
 };

@@ -12,7 +12,7 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     logger.info("logged in user " + loggedInUser);
     const viewData = {
-      assessments: memberAssessments.getUserAssessments(loggedInUser.memberId),
+      assessments: memberAssessments.getUserAssessments(loggedInUser.id),
     };
     response.render("dashboard", viewData);
   },
@@ -20,9 +20,9 @@ const dashboard = {
 
 
   addAssessment(request, response) {
-    const memberId = accounts.getCurrentUser(request);
+    const id = accounts.getCurrentUser(request);
     const newAssessment = {
-      assessmentId: uuid.v1(),
+      id: uuid.v1(),
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
@@ -30,8 +30,8 @@ const dashboard = {
       waist: request.body.waist,
       hips: request.body.hips,
     };
-    memberAssessments.addAssessment(memberId, newAssessment);
-    response.redirect('/assessment/' + memberId)
+    memberAssessments.addAssessment(id, newAssessment);
+    response.redirect('/assessment/' + id)
   },
 
 };
