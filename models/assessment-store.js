@@ -16,7 +16,7 @@ const assessmentCollection = {
   },
 
   getUserAssessments(memberId) {
-    return this.store.findby(this.collection, { memberId: memberId});
+    return this.store.findby(this.collection, { id: id});
   },
       
   addAssessment(memberId, assessment) {

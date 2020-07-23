@@ -10,6 +10,7 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
+    logger.info("logged in user " + loggedInUser);
     const viewData = {
       assessments: memberAssessments.getUserAssessments(loggedInUser.memberId),
     };

@@ -17,8 +17,8 @@ const userStore = {
     this.store.save();
   },
 
-  getUserById(memberId) {
-    return this.store.findOneBy(this.collection, { memberId: memberId });
+  getUserById(id) {
+    return this.store.findOneBy(this.collection, { id: id });
   },
 
   getUserByEmail(email) {
