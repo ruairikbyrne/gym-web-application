@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "memberId": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "name": "Homer Simpson",
+      "email": "homer@simpson.com",
+      "password": "secret",
+      "address": "Springfield, USA",
+      "gender": "M",
+      "height": "2.0",
+      "startingWeight": "107.0"
+    },
+    {
+      "memberId": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
+      "name": "Marge Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret",
+      "address": "Springfield, USA",
+      "gender": "F",
+      "height": "2.2",
+      "startingWeight": "65.0"
+    },
+    {
+      "memberId": "e97f9120-cb82-11ea-af62-a54a30b0cf81",
+      "name": "Ruairi Byrne",
+      "email": "ruairikbyrne@hotmail.com",
+      "password": "secret",
+      "address": "password",
+      "gender": "Male",
+      "height": "2.0",
+      "weight": "107"
+    }
+  ]
+}

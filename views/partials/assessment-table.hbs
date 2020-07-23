@@ -1,0 +1,29 @@
+<table class="ui celled table">
+  <thead>
+    {{> assessment-header}}
+  </thead>
+  <tbody>
+    {{#each assessments}}
+      <tr>
+        <td>
+          {{weight}}
+        </td>
+        <td>
+          {{chest}}
+        </td>
+        <td>
+          {{thigh}}
+        </td>
+        <td>
+          {{upperArm}}
+        </td>
+        <td>
+          {{waist}}
+        </td>
+        <td>
+          {{hips}}
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
