@@ -19,8 +19,8 @@ const assessmentCollection = {
     return this.store.findby(this.collection, { memberId: memberId});
   },
       
-  addAssessment(id, assessment) {
-    const member = this.getMember(id);
+  addAssessment(memberId, assessment) {
+    const member = this.getMember(memberId);
     member.assessment.push(assessment);
   },
 };

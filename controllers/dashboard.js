@@ -8,8 +8,8 @@ const uuid = require('uuid');
 
 const dashboard = {
   index(request, response) {
-    const loggedInUser = accounts.getCurrentUser(request);
     logger.info("dashboard rendering");
+    const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       assessments: memberAssessments.getUserAssessments(loggedInUser.memberId),
     };
