@@ -1,3 +1,14 @@
 {
-  "assessmentCollection": []
+  "assessmentCollection": [
+    {
+      "id": "6cb69c10-d686-11ea-a16d-33491f8801cd",
+      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
+      "weight": "107",
+      "chest": "48",
+      "thigh": "20",
+      "upperArm": "16",
+      "waist": "36",
+      "hips": "38"
+    }
+  ]
 }

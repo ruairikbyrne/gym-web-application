@@ -25,7 +25,7 @@ const assessmentStore = {
   },
       
   addAssessment(assessment) {
-    this.store.add(this.colleiton, assessment);
+    this.store.add(this.collection, assessment);
     this.store.save();
   },
 };
