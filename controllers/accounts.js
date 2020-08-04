@@ -44,7 +44,7 @@ const accounts = {
     const user = userstore.getUserByEmail(request.body.email);
     if (user) {
       response.cookie('dashboard', user.email);
-      logger.info(`authenlogging in ${user.email}`);
+      logger.info(`authenticating ${user.email}`);
       response.redirect('/dashboard');
     } else {
       response.redirect('/login');
