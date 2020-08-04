@@ -24,6 +24,7 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     const newAssessment = {
       id: uuid.v1(),
+      userid: loggedInUser.id,
       weight: request.body.weight,
       chest: request.body.chest,
       thigh: request.body.thigh,
@@ -31,8 +32,9 @@ const dashboard = {
       waist: request.body.waist,
       hips: request.body.hips,
     };
-    memberAssessments.addAssessment(loggedInUser.id, newAssessment);
-    response.redirect('/assessment/' + loggedInUser)
+    logger.debug('Creating a new Assessment', newAssessment);
+    memberAssessments.addAssessment(newAssessment);
+    response.redirect('/dashboard');
   },
 
 };
