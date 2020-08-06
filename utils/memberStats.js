@@ -2,6 +2,6 @@ const memberStats = {
   
     
     
-  },
+  
 
 };

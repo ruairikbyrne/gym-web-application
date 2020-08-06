@@ -1,6 +1,7 @@
 "use strict";
 
 const logger = require("../utils/logger");
+const analytics = require("../utils/analytics");
 const accounts = require('./accounts.js');
 const memberAssessments = require('../models/assessment-store.js');
 const uuid = require('uuid');
@@ -13,6 +14,7 @@ const dashboard = {
     
     const viewData = {
       memberName: loggedInUser.name,
+      memberBMI: analytics.calculateBMI,
       assessments: memberAssessments.getUserAssessments(loggedInUser.id),
     };
     logger.info("about to render ", memberAssessments.getAllAssessments());

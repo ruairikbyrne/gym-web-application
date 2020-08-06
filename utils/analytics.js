@@ -4,11 +4,7 @@ const memberStats = require('./memberStats.js');
 
 const analytics = {
   
-    generateMemberStats(request, response){
-      memberStats = new memberStats();
-      memberStats.bmi = analytics.calculateBMI();
-      
-    },
+
   
     calculateBMI(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
