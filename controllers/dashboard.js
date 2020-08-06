@@ -11,10 +11,10 @@ const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const loggedInUser = accounts.getCurrentUser(request);
-    
+    const loggedInUserBMI = analytics.calculateBMI;
     const viewData = {
       memberName: loggedInUser.name,
-      memberBMI: analytics.calculateBMI,
+      //memberBMI: analytics.calculateBMI,
       assessments: memberAssessments.getUserAssessments(loggedInUser.id),
     };
     logger.info("about to render ", memberAssessments.getAllAssessments());

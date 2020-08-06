@@ -1,3 +1,5 @@
+'use strict';
+
 const accounts = require('../controllers/accounts.js');
 const conversion = require('./conversion.js');
 const logger = require("./logger");
@@ -20,3 +22,5 @@ const analytics = {
   },
 
 };
+
+module.exports = analytics;
