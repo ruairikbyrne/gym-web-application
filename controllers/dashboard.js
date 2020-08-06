@@ -12,6 +12,7 @@ const dashboard = {
     const loggedInUser = accounts.getCurrentUser(request);
     
     const viewData = {
+      memberName: loggedInUser.name,
       assessments: memberAssessments.getUserAssessments(loggedInUser.id),
     };
     logger.info("about to render ", memberAssessments.getAllAssessments());
