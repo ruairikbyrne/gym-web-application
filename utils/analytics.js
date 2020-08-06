@@ -1,11 +1,12 @@
 const accounts = require('./accounts.js');
 const conversion = require('./conversion.js');
-const memberStats = require('./member')
+const memberStats = require('./memberStats.js');
 
 const analytics = {
   
     generateMemberStats(request, response){
-      memberStats stats = new memberStats();
+      memberStats = new memberStats();
+      memberStats.bmi = analytics.calculateBMI();
       
     },
   
