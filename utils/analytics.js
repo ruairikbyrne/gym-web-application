@@ -9,6 +9,7 @@ const analytics = {
 
   
     calculateBMI(request) {
+    var memberBMI = 0;  
     const loggedInUser = accounts.getCurrentUser(request);
     if (loggedInUser.height <= 0){
       logger.info("not calculating BMI: " + loggedInUser.name);
@@ -17,7 +18,8 @@ const analytics = {
     else {
       logger.info("calculating BMI: " + loggedInUser.name);
       //return conversion.round((loggedInUser.weight / (loggedInUser.height * loggedInUser.height)), 2);
-      return (loggedInUser.weight / (loggedInUser.height * loggedInUser.height));
+      memberBMI = (Number(loggedInUser.weight) / (Number(loggedInUser.height) * Number(loggedInUser.height)));
+      return memberBMI;
     }
     
   },
