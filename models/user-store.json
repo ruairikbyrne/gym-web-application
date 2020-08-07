@@ -28,7 +28,7 @@
       "address": "password",
       "gender": "Male",
       "height": "2.0",
-      "weight": "107"
+      "startingWeight": "107"
     }
   ]
 }
