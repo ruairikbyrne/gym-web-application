@@ -12,3 +12,5 @@ const conversion = {
     
   },
 };
+
+module.exports = conversion;

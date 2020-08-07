@@ -21,7 +21,8 @@ const assessmentStore = {
   },
   
   getLastAssessment(){
-    return this.store.last(this.collection);
+    const last = _.last(this.collection);
+    return last;
   },
 
   getUserAssessments(userid) {

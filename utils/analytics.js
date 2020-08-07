@@ -62,13 +62,13 @@ const analytics = {
         const baseMaleWeight = 50.0;       //base male weight is 50kgs
         const baseFemaleWeight = 45.5;     //base female weight is 45.5kgs
         const addWeight = 2.3;             //additional weight for every additional inch over baseHeight
-        const devineWeight = 0;
+        var devineWeight = 0;
 
         const loggedInUser = accounts.getCurrentUser(request);
         workingHeight = conversion.convertMeterstoInches(loggedInUser.height);   //convert height from metres to inches
         logger.info("Converted height in inches: " + workingHeight);
         //if the member is male and his height is less than 60 inches then return 50kgs
-        if (loggedInUser.gender.equals("Male")) {
+        if (loggedInUser.gender == ("M")) {
             if (workingHeight <= baseHeight){
                 devineWeight = baseMaleWeight;
             }
@@ -78,7 +78,7 @@ const analytics = {
             }
         }
         //if the member is female and her height is less than 60 inches then return 45.5kgs
-        else if (loggedInUser.gender.equals("Female")) {
+        else if (loggedInUser.gender == ("F")) {
             if (workingHeight <= baseHeight){
                 devineWeight = baseFemaleWeight;
             }
