@@ -17,6 +17,7 @@ const dashboard = {
       memberName: loggedInUser.name,
       memberBMI: analytics.calculateBMI(request),
       categoryBMI: analytics.determineBMICategory(request),
+      idealWeight: analytics.isIdealBodyWeight(request),
       assessments: memberAssessments.getUserAssessments(loggedInUser.id),
     };
     logger.info("about to render ", memberAssessments.getAllAssessments());

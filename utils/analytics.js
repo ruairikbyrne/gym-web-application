@@ -1,7 +1,9 @@
 'use strict';
 
 const accounts = require('../controllers/accounts.js');
+const memberAssessments = require('../models/assessment-store.js');
 const conversion = require('./conversion.js');
+
 const logger = require("./logger");
 
 const analytics = {
@@ -97,10 +99,13 @@ const analytics = {
         }
         //System.out.println("Devine weight: " + devineWeight);
         //check tolerance in rounding of +/- 0.2 to determine if member has an ideal body weight
-        if ((assessment.weight >= (devineWeight - 0.2)) && (assessment.weight <= (devineWeight + 0.2))) {
+        const lastAssessment = memberAssessments.getLastAssessment();
+        if ((lastAssessment.weight >= (devineWeight - 0.2)) && (lastAssessment.weight <= (devineWeight + 0.2))) {
+            logger.info("ideal weight")
             return true; //has an ideal body weight
         }
         else {
+            logger.info("not ideal weight")
             return false; //does not have an ideal body weight
         }
     }

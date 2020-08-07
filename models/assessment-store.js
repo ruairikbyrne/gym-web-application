@@ -19,6 +19,10 @@ const assessmentStore = {
     return this.store.findOneBy(this.collection, { id: id});
 
   },
+  
+  getLastAssessment(){
+    return this.store.last(this.collection);
+  },
 
   getUserAssessments(userid) {
     return this.store.findBy(this.collection, { userid: userid});
