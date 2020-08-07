@@ -6,4 +6,9 @@ const conversion = {
     
   },
 
+    convertMeterstoInches(numberToConvert) {
+    const conversion = 39.3701;
+    return (numberToConvert * conversion);
+    
+  },
 };

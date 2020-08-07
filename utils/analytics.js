@@ -63,8 +63,8 @@ const analytics = {
         const devineWeight = 0;
 
         const loggedInUser = accounts.getCurrentUser(request);
-        workingHeight = convertMeterstoInches(loggedInUser.height);   //convert height from metres to inches
-        System.out.println("Converted height: " + workingHeight);
+        workingHeight = conversion.convertMeterstoInches(loggedInUser.height);   //convert height from metres to inches
+        logger.info("Converted height in inches: " + workingHeight);
         //if the member is male and his height is less than 60 inches then return 50kgs
         if (loggedInUser.gender.equals("Male")) {
             if (workingHeight <= baseHeight){
