@@ -28,4 +28,28 @@ const analytics = {
 
 };
 
+    determineBMICategory(request, response) {
+        var determinedCategory = "";
+        const bmiValue = analytics.calculateBMI(request)
+        if (bmiValue < 16) {
+            determinedCategory = "SEVERELY UNDERWEIGHT";
+        }
+        else if ((bmiValue >= 16) && (bmiValue < 18.5)) {
+            determinedCategory =  "UNDERWEIGHT";
+        }
+        else if ((bmiValue >= 18.5) && (bmiValue < 25)){
+            determinedCategory = "NORMAL";
+        }
+        else if  ((bmiValue >= 25) && (bmiValue < 30)) {
+            determinedCategory = "OVERWEIGHT";
+        }
+        else if  ((bmiValue >= 30) && (bmiValue < 35)) {
+            determinedCategory = "MODERATELY OBESE";
+        }
+        else if  (bmiValue >= 35) {
+            determinedCategory = "SEVERELY OBESE";
+        }
+        return determinedCategory;
+    }
+
 module.exports = analytics;
