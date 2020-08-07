@@ -27,11 +27,15 @@
     </div>
     <div class="ui statistic">
       <div class="value">
-        {{#if }}
-        <i class="doctor icon"></i>
+        {{#if idealweight}}
+          <i class="green dashboard icon"></i>
+        {{else}}
+          <i class="red dashboard icon"></i>
+        {{/if}}
+
       </div>
       <div class="label">
-        {{categoryBMI}}
+        Ideal Weight Indicator
       </div>
     </div>
 
