@@ -50,9 +50,9 @@ const accounts = {
       response.redirect('/dashboard');
     }
     else if (trainer) {
-      response.cookie('dashboard', trainer.email);
+      response.cookie('trainerdashboard', trainer.email);
       logger.info(`authenticating ${trainer.email}`);
-      response.redirect('/dashboard');
+      response.redirect('/trainerdashboard');
     }
     else {
       response.redirect('/login');
@@ -61,7 +61,12 @@ const accounts = {
 
   getCurrentUser(request) {
     const userEmail = request.cookies.dashboard;
-    return userstore.getUserByEmail(userEmail);
+    if (userstore.getUserByEmail(userEmail)) {
+      return userstore.getUserByEmail(userEmail);    
+        }
+    else {
+      return trainerstore.getTrainerByEmail(userEmail);    
+    }
   },
 };
 
