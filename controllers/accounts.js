@@ -59,6 +59,8 @@ const accounts = {
     }
   },
 
+
+  
   getCurrentUser(request) {
     const userEmail = request.cookies.dashboard;
     if (userstore.getUserByEmail(userEmail)) {
