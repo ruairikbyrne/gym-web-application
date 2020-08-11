@@ -16,6 +16,12 @@ const userStore = {
     this.store.add(this.collection, user);
     this.store.save();
   },
+  
+  updateUser(user) {
+    this.store.update(this.collection, user);
+    this.store.save();
+  },
+  
 
   getUserById(id) {
     return this.store.findOneBy(this.collection, { id: id });

@@ -41,6 +41,14 @@ const accounts = {
     response.redirect('/');
   },
 
+  updateProfile(request, response) {
+    const user = request.body;
+    user.id = uuid.v1();
+    userstore.updateUser(user);
+    logger.info(`updating profile for ${user.email}`);
+    response.redirect('/');
+  },
+  
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
     const trainer = trainerstore.getTrainerByEmail(request.body.email);

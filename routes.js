@@ -18,6 +18,7 @@ router.post("/authenticate", accounts.authenticate);
 router.get("/dashboard", dashboard.index);
 
 router.post("/dashboard/addAssessment", dashboard.addAssessment);
+router.post("/updateprofile", accounts.updateProfile);
 router.get("/trainerdashboard", trainerdashboard.index);
 
 module.exports = router;
