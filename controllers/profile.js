@@ -3,7 +3,7 @@
 const logger = require("../utils/logger");
 const analytics = require("../utils/analytics");
 const accounts = require('./accounts.js');
-const memberAssessments = require('../models/assessment-store.js');
+const memberDetails = require('../models/user-store.js');
 const uuid = require('uuid');
 
 
@@ -24,9 +24,6 @@ const profile = {
     response.render("profile", viewData);
   },
 
-
-
-
     updateUserProfile(request, response) {
       const loggedInUser = accounts.getCurrentUser;
       const updateProfile = {
@@ -38,6 +35,9 @@ const profile = {
         height: request.body.height,
         startingWeight: request.body.startingWeight,
       };
+    logger.debug('Updating user profile', updateProfile);
+    memberDetails.updateUser(updateProfile);
+    response.redirect('/profile');
     
   },
   
