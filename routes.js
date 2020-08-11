@@ -20,7 +20,7 @@ router.get("/dashboard", dashboard.index);
 
 router.post("/dashboard/addAssessment", dashboard.addAssessment);
 router.get("/profile", profile.index);
-router.post("/updateprofile", accounts.updateProfile);
+router.post("/updateprofile", profile.updateUserProfile);
 router.get("/trainerdashboard", trainerdashboard.index);
 
 module.exports = router;
