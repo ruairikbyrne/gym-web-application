@@ -13,12 +13,14 @@ const profile = {
     const loggedInUser = accounts.getCurrentUser(request);
     const viewData = {
       memberName: loggedInUser.name,
-      memberBMI: analytics.calculateBMI(request),
-      categoryBMI: analytics.determineBMICategory(request),
-      idealWeight: analytics.isIdealBodyWeight(request),
-      assessments: memberAssessments.getUserAssessments(loggedInUser.id),
+      address: loggedInUser.address,
+      email: loggedInUser.email,
+      password: loggedInUser.password,
+      gender: loggedInUser.gender,
+      startingWeight: loggedInUser.startingWeight,
+      height: loggedInUser.height,
     };
-    logger.info("about to render ", memberAssessments.getAllAssessments());
+    logger.info("about to render ");
     response.render("profile", viewData);
   },
 
