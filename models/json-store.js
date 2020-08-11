@@ -36,12 +36,6 @@ class JsonStore {
       .value();
   }
 
-  update(collection, obj) {
-    this.db
-      .get(collection)
-      .update(obj)
-      .value();
-  }
   
   findAll(collection) {
     return this.db.get(collection).value();
