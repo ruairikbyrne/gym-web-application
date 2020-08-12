@@ -18,6 +18,18 @@ const trainerdashboard = {
     
     response.render("trainerdashboard", viewData);
   },
+  
+  retrieveMember(request, response){
+    const memberId = request.params.id;
+    logger.info('Member id = ' + memberId);
+    const viewData = {
+      title: 'Member Assessments',
+      assessments: memberAssessments.getUserAssessments(memberId),
+    }
+    response.render('trainer-member', viewData);
+    
+      
+  },
 
 };
 module.exports = trainerdashboard;
