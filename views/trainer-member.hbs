@@ -1,9 +1,10 @@
 {{> menu id="trainer-member"}}
-
+{{#each assessments}}
 <section class="ui segment">
   <h2 class="ui header">
     {{name}}
   </h2>
-  {{> assessment-table}}
+  {{> trainer-assessment-table}}
   {{> addcomment}}
 </section>
+{{/each}}
