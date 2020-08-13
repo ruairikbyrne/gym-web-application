@@ -45,17 +45,16 @@ const dashboard = {
   addComment(request, response) {
     const assessmentId = request.params.id;
     const assessment = memberAssessments.getAssessment(assessmentId);
-    const memberId = assessment.userId;
+    const memberId = assessment.userid;
     const trainerComment = {
       comment: request.body.comment,
     };
     memberAssessments.updateAssessment(assessment, trainerComment);
-    
-    
+        
     const viewData = {
       title: 'Member Assessments',
       assessments: memberAssessments.getUserAssessments(memberId),
-    }
+    };
     response.render('trainer-member', viewData);
     
   },
