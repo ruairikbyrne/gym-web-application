@@ -36,7 +36,7 @@ const assessmentStore = {
   
   updateAssessment(assessment, trainerComment){
     assessment.comment = trainerComment.comment;
-    this.store.sae();
+    this.store.save();
   }
 };
 

@@ -42,15 +42,22 @@ const dashboard = {
   },
 
 
-  updateAssessmentComment(request, response) {
-    const memberId = 
+  addComment(request, response) {
     const assessmentId = request.params.id;
     const assessment = memberAssessments.getAssessment(assessmentId);
+    const memberId = assessment.userId;
     const trainerComment = {
       comment: request.body.comment,
     };
-    memberAssessments.updateAssessment(assessmentId, trainerComment);
-    response.redirect("/trainer-member/" + memberId)
+    memberAssessments.updateAssessment(assessment, trainerComment);
+    
+    
+    const viewData = {
+      title: 'Member Assessments',
+      assessments: memberAssessments.getUserAssessments(memberId),
+    }
+    response.render('trainer-member', viewData);
+    
   },
   
 };
