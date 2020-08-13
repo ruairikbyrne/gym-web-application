@@ -33,6 +33,10 @@ const assessmentStore = {
     this.store.add(this.collection, assessment);
     this.store.save();
   },
+  
+  updateAssessment(assessment, comment){
+    assessment.comment = updated
+  }
 };
 
 module.exports = assessmentStore;
