@@ -2,13 +2,12 @@
   "users": [
     {
       "id": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "name": "Homer Simpson",
-      "email": "homer@simpson.com",
-      "password": "secret",
-      "address": "Springfield, USA",
-      "gender": "M",
-      "height": "2.0",
-      "startingWeight": "107.0"
+      "name": "",
+      "email": "",
+      "password": "",
+      "address": "Smallville",
+      "gender": "",
+      "height": ""
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -25,10 +24,9 @@
       "name": "Ruairi Byrne",
       "email": "ruairikbyrne@hotmail.com",
       "password": "secret",
-      "address": "password",
+      "address": "Smallville",
       "gender": "Male",
-      "height": "2.0",
-      "startingWeight": "107"
+      "height": "2.0"
     }
   ]
 }

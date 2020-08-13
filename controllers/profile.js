@@ -25,7 +25,7 @@ const profile = {
   },
 
     updateUserProfile(request, response) {
-      const loggedInUser = accounts.getCurrentUser;
+      const loggedInUser = accounts.getCurrentUser(request);
       const updatedProfile = {
         email: request.body.email,
         name: request.body.name,
@@ -33,7 +33,7 @@ const profile = {
         address: request.body.address,
         gender: request.body.gender,
         height: request.body.height,
-        startingWeight: request.body.startingWeight,
+        startingWeight: request.body.weight,
           
       }
       
