@@ -26,17 +26,19 @@ const profile = {
 
     updateUserProfile(request, response) {
       const loggedInUser = accounts.getCurrentUser;
+      const updatedProfile = {
+        email: request.body.email,
+        name: request.body.name,
+        password: request.body.password,
+        address: request.body.address,
+        gender: request.body.gender,
+        height: request.body.height,
+        startingWeight: request.body.startingWeight,
+          
+      }
       
-      loggedInUser.email = request.body.email,
-      loggedInUser.name = request.body.name,
-      loggedInUser.password = request.body.password,
-      loggedInUser.address = request.body.address,
-      loggedInUser.gender = request.body.gender,
-      loggedInUser.height = request.body.height,
-      loggedInUser.startingWeight = request.body.startingWeight,
-      loggedInUser.save();
-    //logger.debug('Updating user profile', updateProfile);
-    //memberDetails.updateUser(updateProfile);
+    memberDetails.updateProfile(loggedInUser, updatedProfile);
+    
     response.redirect('/profile');
     
   },

@@ -24,4 +24,5 @@ router.post("/updateprofile", profile.updateUserProfile);
 router.get("/trainerdashboard", trainerdashboard.index);
 router.get("/trainerdashboard/:id", trainerdashboard.retrieveMember);
 
+
 module.exports = router;
