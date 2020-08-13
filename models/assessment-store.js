@@ -34,8 +34,9 @@ const assessmentStore = {
     this.store.save();
   },
   
-  updateAssessment(assessment, comment){
-    assessment.comment = updated
+  updateAssessment(assessment, trainerComment){
+    assessment.comment = trainerComment.comment;
+    this.store.sae();
   }
 };
 

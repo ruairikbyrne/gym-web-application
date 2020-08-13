@@ -42,7 +42,16 @@ const dashboard = {
   },
 
 
-  
+  updateAssessmentComment(request, response) {
+    const memberId = 
+    const assessmentId = request.params.id;
+    const assessment = memberAssessments.getAssessment(assessmentId);
+    const trainerComment = {
+      comment: request.body.comment,
+    };
+    memberAssessments.updateAssessment(assessmentId, trainerComment);
+    response.redirect("/trainer-member/" + memberId)
+  },
   
 };
 module.exports = dashboard;
