@@ -35,39 +35,6 @@
       "hips": "38",
       "comment": "13/08/20",
       "trend": true
-    },
-    {
-      "id": "6ec9c330-de5e-11ea-ae6b-7f9f6b0ee66f",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "weight": "106",
-      "chest": "48",
-      "thigh": "20",
-      "upperArm": "16",
-      "waist": "36",
-      "hips": "38",
-      "trend": false
-    },
-    {
-      "id": "766e3e90-de5e-11ea-ae6b-7f9f6b0ee66f",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "weight": "105",
-      "chest": "48",
-      "thigh": "20",
-      "upperArm": "16",
-      "waist": "36",
-      "hips": "38",
-      "trend": false
-    },
-    {
-      "id": "c5ec9610-de5e-11ea-8a72-29aab1152adb",
-      "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
-      "weight": "106",
-      "chest": "48",
-      "thigh": "20",
-      "upperArm": "16",
-      "waist": "36",
-      "hips": "38",
-      "trend": false
     }
   ]
 }
