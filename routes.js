@@ -16,10 +16,12 @@ router.get("/logout", accounts.logout);
 router.post("/register", accounts.register);
 router.post("/authenticate", accounts.authenticate);
 
+
 router.get("/dashboard", dashboard.index);
 
 router.post("/dashboard/addAssessment", dashboard.addAssessment);
 router.post("/dashboard/addComment/:id", dashboard.addComment);
+router.get('/dashboard/deleteAssessment/:id', dashboard.deleteAssessment);
 router.get("/profile", profile.index);
 router.post("/updateprofile", profile.updateUserProfile);
 router.get("/trainerdashboard", trainerdashboard.index);

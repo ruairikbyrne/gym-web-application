@@ -23,15 +23,14 @@
       "comment": "test"
     },
     {
-      "id": "b2b25920-dcb7-11ea-9114-85af9cfb50fc",
+      "id": "1900df30-de57-11ea-8d69-c5a1b810319a",
       "userid": "3ad52697-6d98-4d80-8273-084de55a86c0",
       "weight": "105",
       "chest": "48",
       "thigh": "20",
       "upperArm": "16",
       "waist": "36",
-      "hips": "38",
-      "comment": "13/08/20"
+      "hips": "38"
     }
   ]
 }

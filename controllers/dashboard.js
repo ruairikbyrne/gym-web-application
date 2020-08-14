@@ -59,5 +59,14 @@ const dashboard = {
     
   },
   
+  deleteAssessment(request, response) {
+    const assessmentId = request.params.id;
+    logger.info("Deleting Assessment" + assessmentId);
+    logger.debug('Deleting Assessment ${assessmentId}');
+    memberAssessments.removeAssessment(assessmentId);
+    response.redirect("/dashboard");
+  }
+  
+  
 };
 module.exports = dashboard;

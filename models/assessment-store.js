@@ -37,6 +37,12 @@ const assessmentStore = {
   updateAssessment(assessment, trainerComment){
     assessment.comment = trainerComment.comment;
     this.store.save();
+  },
+  
+  removeAssessment(id){
+    const assessment = this.getAssessment(id);
+    this.store.remove(this.collection, assessment);
+    this.store.save();    
   }
 };
 
