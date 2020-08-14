@@ -26,6 +26,8 @@ const dashboard = {
 
   addAssessment(request, response) {
     const loggedInUser = accounts.getCurrentUser(request);
+    const arrAssessment = memberAssessments.getUserAssessments(loggedInUser);
+    
     const newAssessment = {
       id: uuid.v1(),
       userid: loggedInUser.id,
