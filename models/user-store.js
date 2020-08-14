@@ -37,6 +37,12 @@ const userStore = {
     this.store.save()
   },
   
+  deleteMember(id){
+    const member = this.getUserById(id);
+    this.store.remove(this.collection, member);
+    this.store.save();    
+  },
+  
 };
 
 module.exports = userStore;

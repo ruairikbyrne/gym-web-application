@@ -21,11 +21,12 @@ router.get("/dashboard", dashboard.index);
 
 router.post("/dashboard/addAssessment", dashboard.addAssessment);
 router.post("/dashboard/addComment/:id", dashboard.addComment);
-router.get('/dashboard/deleteAssessment/:id', dashboard.deleteAssessment);
+router.get("/dashboard/deleteAssessment/:id", dashboard.deleteAssessment);
 router.get("/profile", profile.index);
 router.post("/updateprofile", profile.updateUserProfile);
 router.get("/trainerdashboard", trainerdashboard.index);
 router.get("/trainerdashboard/:id", trainerdashboard.retrieveMember);
+router.get("/trainerdashboard/deleteMember/:id", trainerdashboard.deleteMember);
 
 
 module.exports = router;

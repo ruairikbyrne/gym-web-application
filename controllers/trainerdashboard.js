@@ -30,6 +30,14 @@ const trainerdashboard = {
     
       
   },
+  
+  deleteMember(request, response) {
+    const memberId = request.params.id;
+    logger.info("Deleting Member " + memberId);
+    logger.debug("Deleting member ${memberId}");
+    member.deleteMember(memberId);
+    response.redirect("/trainerdashboard");
+  }
 
 };
 module.exports = trainerdashboard;

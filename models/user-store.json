@@ -19,16 +19,6 @@
       "gender": "F",
       "height": "2.2",
       "startingWeight": "65.0"
-    },
-    {
-      "id": "e97f9120-cb82-11ea-af62-a54a30b0cf81",
-      "name": "Ruairi Byrne",
-      "email": "ruairikbyrne@hotmail.com",
-      "password": "secret",
-      "address": "Smallville",
-      "gender": "Male",
-      "height": "2.0",
-      "startingWeight": "65.0"
     }
   ]
 }
