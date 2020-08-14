@@ -25,24 +25,26 @@ const dashboard = {
 
 
   addAssessment(request, response) {
-    const positiveTrend = false;
+    var positiveTrend = false;
     const loggedInUser = accounts.getCurrentUser(request);
-    const arrAssessment = memberAssessments.getUserAssessments(loggedInUser);
-    const lastAssessment = arrAssessment.length - 1;
-    if (lastAssessment <= 0) {
+    const arrAssessment = memberAssessments.getUserAssessments(loggedInUser.id);
+    const lastAssessment = arrAssessment.length;
+    logger.info("No of assessment " + lastAssessment);
+    
+    if (lastAssessment == 0) {
       if (loggedInUser.startingWeight > request.body.weight) {
         positiveTrend = true;
       } else {
         positiveTrend = false;
       }
     } else {
-      if (arrAssessment[arr14.length - 1].weight > request.body.weight) {
+      if (arrAssessment[arrAssessment.length - 1].weight > request.body.weight) {
         positiveTrend = true;
       } else {
         positiveTrend = false;
       }
         
-    }
+    };
   
       
     const newAssessment = {
@@ -54,9 +56,11 @@ const dashboard = {
       upperArm: request.body.upperArm,
       waist: request.body.waist,
       hips: request.body.hips,
+      trend: positiveTrend,
     };
     logger.debug('Creating a new Assessment', newAssessment);
     memberAssessments.addAssessment(newAssessment);
+    
     response.redirect('/dashboard');
   },
 
