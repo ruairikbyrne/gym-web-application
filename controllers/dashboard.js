@@ -6,6 +6,7 @@ const accounts = require('./accounts.js');
 const memberAssessments = require('../models/assessment-store.js');
 const uuid = require('uuid');
 
+const _ = require("lodash");
 
 const dashboard = {
   index(request, response) {
