@@ -12,7 +12,8 @@ const assessmentStore = {
   
 
   getAllAssessments() {
-    return this.store.findAll(this.collection);
+    //return this.store.findAll(this.collection);
+    return _.orderBy(this.store.findAll(this.collection), this.collection.date, 'asc');
   },
 
   getAssessment(id) {
