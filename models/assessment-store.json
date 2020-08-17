@@ -9,9 +9,9 @@
       "upperArm": "16",
       "waist": "36",
       "hips": "38",
-      "comment": "13/08/20",
+      "comment": "Assessment 1",
       "trend": false,
-      "date": ""
+      "date": "20/08/2020"
     },
     {
       "id": "1a96e770-dcb5-11ea-8eb6-e5746c3dd3fe",
@@ -22,9 +22,9 @@
       "upperArm": "16",
       "waist": "36",
       "hips": "38",
-      "comment": "test",
+      "comment": "Assessment 2",
       "trend": true,
-      "date": ""
+      "date": "02/08/2020"
     },
     {
       "id": "b2b25920-dcb7-11ea-9114-85af9cfb50fc",
@@ -35,9 +35,9 @@
       "upperArm": "16",
       "waist": "36",
       "hips": "38",
-      "comment": "13/08/20",
+      "comment": "Assessment 3",
       "trend": true,
-      "date": ""
+      "date": "05/08/2020"
     },
     {
       "id": "be977400-e09f-11ea-8dae-c5c214738980",
@@ -48,6 +48,7 @@
       "upperArm": "16",
       "waist": "36",
       "hips": "38",
+      "comment": "Assessment 4",
       "trend": false,
       "date": "17/08/2020"
     }
