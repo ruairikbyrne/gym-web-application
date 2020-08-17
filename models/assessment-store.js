@@ -44,6 +44,7 @@ const assessmentStore = {
     this.store.remove(this.collection, assessment);
     this.store.save();    
   }
+  
 };
 
 module.exports = assessmentStore;

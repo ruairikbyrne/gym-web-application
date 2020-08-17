@@ -57,6 +57,7 @@ const dashboard = {
       waist: request.body.waist,
       hips: request.body.hips,
       trend: positiveTrend,
+      date: analytics.determineDate(),
     };
     logger.debug('Creating a new Assessment', newAssessment);
     memberAssessments.addAssessment(newAssessment);
