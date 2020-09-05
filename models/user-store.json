@@ -8,7 +8,7 @@
       "address": "Smalltown",
       "gender": "Male",
       "height": "2.0",
-      "startingWeight": "100"
+      "startingWeight": "80.0"
     },
     {
       "id": "2b6f0989-7b7f-4a38-ad26-aa06b922d751",
@@ -19,6 +19,16 @@
       "gender": "F",
       "height": "2.2",
       "startingWeight": "65.0"
+    },
+    {
+      "name": "Ruairi Byrne",
+      "email": "ruairikbyrne@hotmail.com",
+      "password": "secret",
+      "address": "Wexford",
+      "gender": "M",
+      "height": "2",
+      "startingWeight": "85",
+      "id": "4a8a6ea0-eee1-11ea-bdba-0bc67525d1f6"
     }
   ]
 }
