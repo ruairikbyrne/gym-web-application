@@ -9,6 +9,7 @@ const trainerdashboard = require("./controllers/trainerdashboard.js");
 const about = require("./controllers/about.js");
 const accounts = require("./controllers/accounts.js");
 
+router.get("/about", about.index);
 router.get("/", accounts.index);
 router.get("/login", accounts.login);
 router.get("/signup", accounts.signup);

@@ -13,6 +13,22 @@ const analytics = {
     calculateBMI(request, response) {
     var memberBMI = 0;  
     const loggedInUser = accounts.getCurrentUser(request);
+
+      
+    var weight = 0;  
+    const arrAssessment = memberAssessments.getUserAssessments(loggedInUser.id);
+    const lastAssessment = arrAssessment.length;
+    logger.info("Analytics No of assessment " + lastAssessment);
+    
+    if (lastAssessment == 0) {
+      weight = loggedInUser.startingWeight;
+    } else {
+      weight = arrAssessment[arrAssessment.length - 1].weight
+      }
+      
+      logger.info("Last Weight:   " + weight);
+      
+      
     if (loggedInUser.height <= 0){
       logger.info("not calculating BMI: " + loggedInUser.name);
       return 0;
@@ -20,8 +36,8 @@ const analytics = {
     else {
       logger.info("calculating BMI: " + loggedInUser.name);
       //return conversion.round((loggedInUser.weight / (loggedInUser.height * loggedInUser.height)), 2);
-      
-      memberBMI = (Number(loggedInUser.startingWeight) / (Number(loggedInUser.height) * Number(loggedInUser.height)));
+      //memberBMI = (Number(loggedInUser.startingWeight) / (Number(loggedInUser.height) * Number(loggedInUser.height)));
+      memberBMI = (weight / (Number(loggedInUser.height) * Number(loggedInUser.height)));
       logger.info("calculated BMI: " + memberBMI);
       return memberBMI;
     }
@@ -32,7 +48,8 @@ const analytics = {
 
     determineBMICategory(request, response) {
         var determinedCategory = "";
-        const bmiValue = analytics.calculateBMI(request)
+        const bmiValue = analytics.calculateBMI(request);
+        
         if (bmiValue < 16) {
             determinedCategory = "SEVERELY UNDERWEIGHT";
         }
@@ -65,6 +82,23 @@ const analytics = {
         var devineWeight = 0;
 
         const loggedInUser = accounts.getCurrentUser(request);
+        
+        //just added 04-09-20
+        const arrAssessment = memberAssessments.getUserAssessments(loggedInUser.id);
+        const lastAssessment = arrAssessment.length;
+        var weight = 0;
+        
+        if (lastAssessment == 0) {
+          weight = loggedInUser.startingWeight;
+        } else {
+          weight = arrAssessment[arrAssessment.length - 1].weight
+        }
+      
+        logger.info("Last Weight:   " + weight);
+        
+        //weight = arrAssessment[arrAssessment.length - 1].weight
+        
+        
         workingHeight = conversion.convertMeterstoInches(loggedInUser.height);   //convert height from metres to inches
         logger.info("Converted height in inches: " + workingHeight);
         //if the member is male and his height is less than 60 inches then return 50kgs
@@ -97,9 +131,23 @@ const analytics = {
                 devineWeight = ((workingHeight - baseHeight)*addWeight) + baseFemaleWeight;
             }
         }
-        //System.out.println("Devine weight: " + devineWeight);
+        logger.info("Devine weight: " + devineWeight);
+        
+        logger.info("last assessment weight: " + weight);
         //check tolerance in rounding of +/- 0.2 to determine if member has an ideal body weight
-        const lastAssessment = memberAssessments.getLastAssessment();
+        
+        
+        if ((weight >= (devineWeight - 0.2)) && (weight <= (devineWeight + 0.2))) {
+            logger.info("ideal weight")
+            return true; //has an ideal body weight
+        }
+        else {
+            logger.info("not ideal weight")
+            return false; //does not have an ideal body weight
+        }
+        
+        
+        /**
         if ((lastAssessment.weight >= (devineWeight - 0.2)) && (lastAssessment.weight <= (devineWeight + 0.2))) {
             logger.info("ideal weight")
             return true; //has an ideal body weight
@@ -108,6 +156,7 @@ const analytics = {
             logger.info("not ideal weight")
             return false; //does not have an ideal body weight
         }
+        **/
     },
 
   determineDate(request, response) {
