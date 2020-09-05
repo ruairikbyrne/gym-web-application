@@ -14,6 +14,7 @@ const accounts = {
     response.render('index', viewData);
   },
 
+  
   login(request, response) {
     const viewData = {
       title: 'Login to the Application',
@@ -21,11 +22,13 @@ const accounts = {
     response.render('login', viewData);
   },
 
+  
   logout(request, response) {
     response.cookie('dashboard', '');
     response.redirect('/');
   },
 
+  
   signup(request, response) {
     const viewData = {
       title: 'Login to the Application',
@@ -33,6 +36,7 @@ const accounts = {
     response.render('signup', viewData);
   },
 
+  
   register(request, response) {
     const user = request.body;
     user.id = uuid.v1();
@@ -41,6 +45,7 @@ const accounts = {
     response.redirect('/');
   },
 
+  
   updateProfile(request, response) {
     const user = request.body;
     user.id = uuid.v1();
@@ -48,6 +53,7 @@ const accounts = {
     logger.info(`updating profile for ${user.email}`);
     response.redirect('/');
   },
+  
   
   authenticate(request, response) {
     const user = userstore.getUserByEmail(request.body.email);
@@ -66,7 +72,6 @@ const accounts = {
       response.redirect('/login');
     }
   },
-
 
   
   getCurrentUser(request) {

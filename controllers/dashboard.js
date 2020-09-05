@@ -23,15 +23,12 @@ const dashboard = {
     response.render("dashboard", viewData);
   },
 
-
-
+  
   addAssessment(request, response) {
     var positiveTrend = false;
     const loggedInUser = accounts.getCurrentUser(request);
     const arrAssessment = memberAssessments.getUserAssessments(loggedInUser.id);
     const lastAssessment = arrAssessment.length;
-    logger.info("No of assessment " + lastAssessment);
-    
     if (lastAssessment == 0) {
       if (loggedInUser.startingWeight > request.body.weight) {
         positiveTrend = true;
@@ -43,11 +40,8 @@ const dashboard = {
         positiveTrend = true;
       } else {
         positiveTrend = false;
-      }
-        
+      }       
     };
-  
-      
     const newAssessment = {
       id: uuid.v1(),
       userid: loggedInUser.id,
@@ -61,8 +55,7 @@ const dashboard = {
       date: analytics.determineDate(),
     };
     logger.debug('Creating a new Assessment', newAssessment);
-    memberAssessments.addAssessment(newAssessment);
-    
+    memberAssessments.addAssessment(newAssessment);    
     response.redirect('/dashboard');
   },
 
@@ -75,14 +68,13 @@ const dashboard = {
       comment: request.body.comment,
     };
     memberAssessments.updateAssessment(assessment, trainerComment);
-        
     const viewData = {
       title: 'Member Assessments',
       assessments: memberAssessments.getUserAssessments(memberId),
     };
     response.render('trainer-member', viewData);
-    
   },
+ 
   
   deleteAssessment(request, response) {
     const assessmentId = request.params.id;

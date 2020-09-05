@@ -16,29 +16,35 @@ const assessmentStore = {
     
   },
 
+  
   getAssessment(id) {
     return this.store.findOneBy(this.collection, { id: id});
 
   },
+  
   
   getLastAssessment(){
     const last = _.last(this.collection);
     return last;
   },
 
+  
   getUserAssessments(userid) {
     return this.store.findBy(this.collection, { userid: userid});
   },
-      
+  
+  
   addAssessment(assessment) {
     this.store.add(this.collection, assessment);
     this.store.save();
   },
   
+  
   updateAssessment(assessment, trainerComment){
     assessment.comment = trainerComment.comment;
     this.store.save();
   },
+  
   
   removeAssessment(id){
     const assessment = this.getAssessment(id);

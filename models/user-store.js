@@ -8,10 +8,12 @@ const userStore = {
   store: new JsonStore('./models/user-store.json', { users: [] }),
   collection: 'users',
 
+  
   getAllUsers() {
     return this.store.findAll(this.collection);
   },
 
+  
   addUser(user) {
     this.store.add(this.collection, user);
     this.store.save();
@@ -22,9 +24,11 @@ const userStore = {
     return this.store.findOneBy(this.collection, { id: id });
   },
 
+  
   getUserByEmail(email) {
     return this.store.findOneBy(this.collection, { email: email });
   },
+  
   
   updateProfile(user, updatedProfile) {
     user.name = updatedProfile.name;
@@ -36,6 +40,7 @@ const userStore = {
     user.startingWeight = updatedProfile.startingWeight;
     this.store.save()
   },
+  
   
   deleteMember(id){
     const member = this.getUserById(id);
