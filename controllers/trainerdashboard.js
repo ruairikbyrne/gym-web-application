@@ -15,9 +15,9 @@ const trainerdashboard = {
       title: 'Member',
       members: member.getAllUsers(),
     };
-    
     response.render("trainerdashboard", viewData);
   },
+  
   
   retrieveMember(request, response){
     const memberId = request.params.id;
@@ -27,9 +27,8 @@ const trainerdashboard = {
       assessments: memberAssessments.getUserAssessments(memberId),
     }
     response.render('trainer-member', viewData);
-    
-      
   },
+
   
   deleteMember(request, response) {
     const memberId = request.params.id;
@@ -37,7 +36,7 @@ const trainerdashboard = {
     logger.debug("Deleting member ${memberId}");
     member.deleteMember(memberId);
     response.redirect("/trainerdashboard");
-  }
+  },
 
 };
 module.exports = trainerdashboard;

@@ -1,15 +1,14 @@
 const conversion = {
   
-    round(numberToConvert, precision) {
+  round(numberToConvert, precision) {
     var p = Math.pow(10, precision);
     return Math.round(numberToConvert * p) / p;
-    
   },
 
-    convertMeterstoInches(numberToConvert) {
+  
+  convertMeterstoInches(numberToConvert) {
     const conversion = 39.3701;
     return (numberToConvert * conversion);
-    
   },
 };
 

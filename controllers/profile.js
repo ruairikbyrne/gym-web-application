@@ -24,23 +24,20 @@ const profile = {
     response.render("profile", viewData);
   },
 
-    updateUserProfile(request, response) {
-      const loggedInUser = accounts.getCurrentUser(request);
-      const updatedProfile = {
-        email: request.body.email,
-        name: request.body.name,
-        password: request.body.password,
-        address: request.body.address,
-        gender: request.body.gender,
-        height: request.body.height,
-        startingWeight: request.body.weight,
-          
-      }
-      
+  
+  updateUserProfile(request, response) {
+    const loggedInUser = accounts.getCurrentUser(request);
+    const updatedProfile = {
+      email: request.body.email,
+      name: request.body.name,
+      password: request.body.password,
+      address: request.body.address,
+      gender: request.body.gender,
+      height: request.body.height,
+      startingWeight: request.body.weight,
+    }
     memberDetails.updateProfile(loggedInUser, updatedProfile);
-    
     response.redirect('/profile');
-    
   },
   
   
